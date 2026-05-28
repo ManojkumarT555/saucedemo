@@ -9,12 +9,12 @@ test.describe('Login Tests', () => {
         await loginpage.visit();
     });
 
-    test('TC01 : Login with valid credentials', async ({ page }) => {
+    test('TC01 : Login with valid credentials', async () => {
         await loginpage.login(loginData.validUsername, loginData.validPassword);
         await expect(loginpage.inventorytitle).toHaveText('Products');
     });
 
-    test('TC02 : Login with invalid credentials', async ({ page }) => {
+    test('TC02 : Login with invalid credentials', async () => {
         await loginpage.login(loginData.invalidUsername, loginData.invalidPassword);
         await expect(loginpage.errorMessage).toBeVisible();
     });
