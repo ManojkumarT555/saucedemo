@@ -17,7 +17,8 @@ test.describe('Inventory Tests', () => {
 
         await inventoryPage.addBackpackToCart();
         await inventoryPage.addFleeceJacketToCart();
-        await expect(inventoryPage.cartBadge).toHaveText('2');
+        await inventoryPage.removeBackpack();
+        await expect(inventoryPage.cartBadge).toHaveText('1');
     });
 
 });
